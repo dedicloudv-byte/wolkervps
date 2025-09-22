@@ -1,0 +1,14 @@
+cloudflare-bot-package/
+cloudflare-bot-package/config/
+cloudflare-bot-package/src/
+cloudflare-bot-package/scripts/
+cloudflare-bot-package/logs/
+cloudflare-bot-package/data/
+cloudflare-bot-package/package.json
+cloudflare-bot-package/index.js
+cloudflare-bot-package/ecosystem.config.js
+cloudflare-bot-package/.env.example
+cloudflare-bot-package/start-bot.sh
+cloudflare-bot-package/install.sh
+cloudflare-bot-package/README.md
+cloudflare-bot-package/DEPLOYMENT_GUIDE.md

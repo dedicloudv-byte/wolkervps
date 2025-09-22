@@ -1,0 +1,6 @@
+total 4
+drwxr-xr-x 5 root root   62 Sep 21 07:57 .
+drwxr-xr-x 8 root root 4096 Sep 21 08:23 ..
+drwxr-xr-x 2 root root   10 Sep 21 07:57 config
+drwxr-xr-x 2 root root   10 Sep 21 07:57 scripts
+drwxr-xr-x 2 root root   10 Sep 21 07:57 src

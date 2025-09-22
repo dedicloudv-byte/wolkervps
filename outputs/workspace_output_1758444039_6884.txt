@@ -1,0 +1,6 @@
+-rw-r--r-- 1 root root  5804 Sep 21 08:23 BOT_INFO.md
+-rw-r--r-- 1 root root  3321 Sep 21 08:22 DEPLOYMENT_GUIDE.md
+-rw-r--r-- 1 root root  6146 Sep 21 08:40 FINAL_SUMMARY.md
+-rw-r--r-- 1 root root  5210 Sep 21 08:14 README.md
+-rw-r--r-- 1 root root 14598 Sep 21 08:39 cloudflare-bot-package.tar.gz
+-rw-r--r-- 1 root root  3506 Sep 21 08:17 todo.md

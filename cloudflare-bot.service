@@ -1,0 +1,34 @@
+[Unit]
+Description=Cloudflare Telegram Bot
+Documentation=https://github.com/yourusername/cloudflare-telegram-bot
+After=network.target
+
+[Service]
+Type=forking
+User=root
+WorkingDirectory=/opt/cloudflare-bot
+ExecStart=/usr/bin/pm2 start ecosystem.config.js
+ExecReload=/usr/bin/pm2 reload ecosystem.config.js
+ExecStop=/usr/bin/pm2 stop ecosystem.config.js
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cloudflare-bot
+
+# Environment
+Environment=NODE_ENV=production
+Environment=PM2_HOME=/root/.pm2
+
+# Security
+NoNewPrivileges=false
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/cloudflare-bot
+
+# Resource limits
+LimitNOFILE=10000
+LimitNPROC=10000
+
+[Install]
+WantedBy=multi-user.target

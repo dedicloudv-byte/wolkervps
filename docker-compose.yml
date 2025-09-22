@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  cloudflare-bot:
+    build: .
+    container_name: cloudflare-telegram-bot
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - BOT_OWNER_ID=${BOT_OWNER_ID}
+      - BOT_ADMIN_IDS=${BOT_ADMIN_IDS}
+      - CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}
+      - CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}
+      - PORT=3000
+      - HOST=0.0.0.0
+      - MAX_WORKERS_PER_USER=${MAX_WORKERS_PER_USER:-10}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    networks:
+      - bot-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  bot-network:
+    driver: bridge
